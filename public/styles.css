@@ -1,0 +1,41 @@
+html , body , .fullPG{
+  height:100%;
+}
+.tap{
+  margin-top: 0;
+}
+
+.homeHead{
+  padding-left: 10%;
+  max-width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Bungee', cursive;
+}
+
+.homePara{
+  padding-left: 10%;
+  padding-right:10%;
+  font-family: 'Roboto', cursive;
+}
+.errorMsg{
+  color: red;
+}
+.homeBtn{
+  margin-left: 20%;
+  margin-right: 10%;
+}
+.btnTxt{
+  font-family: 'Roboto', sans-serif;
+}
+.usrTbl{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+.pdng{
+  margin-top: 5%;
+}
+.cntr{
+  text-align: center
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="homeHead pdng">
+        /<a href="/">home</a>
+      </div>
+      <h1 class="display-5 homeHead tap"><%= topHead %></h></h1>
+
+      <div class="usrTbl">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Current Credit</th>
+                  <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0;i<allUser.length;i++){ %>
+              <tr>
+                    <th><%= allUser[i].name %></th>
+                    <td><%= allUser[i].email %></td>
+                    <td><%= allUser[i].credit %></td>
+                    <form action=<%=postAdd %> method="post">
+                      <td><input type="hidden" name="from" value=<%=from %>><input type="hidden" name="naam" value=<%= allUser[i].name %>>
+                        <button type="submit" class="btn btn-dark" name = "id" value = <%= allUser[i]._id %>><%= btnName %></button></button></td>
+                    </form>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+  </body>
+</html>
