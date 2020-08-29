@@ -20,12 +20,12 @@ const transferSchema = new mongoose.Schema({
 var User = mongoose.model('User', userSchema);
 var Transfer = mongoose.model('Transfer', transferSchema);
 
-User.insertMany([{name:"Arjun" , email:"arjun01@gmail.com" , credit:50 },{name:"Riya" , email:"sharma.riya@gmail.com" , credit:405 },{name:"Kabir" , email:"kabir5925@mail.com" , credit:300 },
-{name:"Diya" , email:"diya@mail.com" , credit:250 },{name:"Aditya" , email:"adityagupta70@gmail.com" , credit:69 },{name:"Siddarth" , email:"siddshukla@mail.com" , credit:200 },
-{name:"Yash" , email:"yashsahu007@gmail.com" , credit: 420 },{name:"Naina" , email:"naina1995@mail.com" , credit:20 },{name:"Jyoti" , email:"jyotilbs@gmail.com" , credit:350 },
-{name:"Aditi" , email:"aditi@mail.com" , credit:40 }], function(error, docs) {
-  console.log(error);
-});
+// User.insertMany([{name:"Arjun" , email:"arjun01@gmail.com" , credit:50 },{name:"Riya" , email:"sharma.riya@gmail.com" , credit:405 },{name:"Kabir" , email:"kabir5925@mail.com" , credit:300 },
+// {name:"Diya" , email:"diya@mail.com" , credit:250 },{name:"Aditya" , email:"adityagupta70@gmail.com" , credit:69 },{name:"Siddarth" , email:"siddshukla@mail.com" , credit:200 },
+// {name:"Yash" , email:"yashsahu007@gmail.com" , credit: 420 },{name:"Naina" , email:"naina1995@mail.com" , credit:20 },{name:"Jyoti" , email:"jyotilbs@gmail.com" , credit:350 },
+// {name:"Aditi" , email:"aditi@mail.com" , credit:40 }], function(error, docs) {
+//   console.log(error);
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -114,6 +114,10 @@ app.post("/success",function(req,res){
 
 })
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 app.listen(port, () => {
-  console.log("Successfully Running in port 3000");
+  console.log("Successfully started the server");
 })
