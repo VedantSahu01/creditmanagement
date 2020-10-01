@@ -3,8 +3,9 @@ const bodyParser = require("body-parser");
 const app = express();
 const ejs = require('ejs');
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb+srv://admin-USERNAME:PASSWORD1@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin-Vedant:VeSa%232001@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/creditManagement",{useNewUrlParser: true});
+//mongoose.connect('mongodb+srv://admin-USERNAME:PASSWORD1@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -14,7 +15,8 @@ const transferSchema = new mongoose.Schema({
   from:String,
   fromName: String,
   toName: String,
-  Transfered: Number
+  Transfered: Number,
+  transferedTime:String
 });
 var User = mongoose.model('User', userSchema);
 var Transfer = mongoose.model('Transfer', transferSchema);
@@ -96,7 +98,9 @@ app.post("/success",function(req,res){
       console.log(err);
   });
   if(!error){
-    Transfer.create({from:from,fromName:fromName,toName: tooName,Transfered: points},function(err,res){
+    var event = new Date();
+    var ev= event.toLocaleString('en-US');
+    Transfer.create({from:from,fromName:fromName,toName: tooName,Transfered: points,transferedTime:ev},function(err,res){
       if(err)
         console.log(err);
     });
