@@ -3,9 +3,8 @@ const bodyParser = require("body-parser");
 const app = express();
 const ejs = require('ejs');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://admin-Vedant:VeSa%232001@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
 //mongoose.connect("mongodb://localhost:27017/creditManagement",{useNewUrlParser: true});
-//mongoose.connect('mongodb+srv://admin-USERNAME:PASSWORD1@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin-USERNAME:PASSWORD1@cluster0.zy2bu.mongodb.net/creditManagement', {useNewUrlParser: true});
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
